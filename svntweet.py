@@ -48,8 +48,15 @@ def tweet(args, username, password):
                 # Post the message to twitter
                 try:
                     print "Posting to twitter... ",
-                    twitter.Api(username=username, password=password)\
-                    .PostUpdate(PREFIX + args[i + 1][:POST_LIMIT - len(PREFIX)])
+                    api = twitter.Api(username=username, password=password)
+                    try:
+                        # Try to set the source (from svnTweet)
+                        api.SetSource('svntweet')
+                    except NameError:
+                        # Unless python.twitter < v0.6
+                        pass
+                    api.PostUpdate(PREFIX + args[i + 1]\
+                    [:POST_LIMIT - len(PREFIX)])
                 except:
                     print "failed."
                 else:
