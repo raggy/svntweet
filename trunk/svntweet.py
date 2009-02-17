@@ -59,7 +59,6 @@ def tweet(args, username, password):
                     [:POST_LIMIT - len(PREFIX)])
                 except:
                     print "failed."
-                    raise
                 else:
                     print "success."
 
