@@ -17,6 +17,9 @@
  
 """Wrapper for SVN which posts any log messages to twitter"""
 
+import warnings
+warnings.simplefilter("ignore", DeprecationWarning)
+
 import os
 import os.path
 import sys
