@@ -47,7 +47,7 @@ def tweet(args, username, password):
             if e == '-m':
                 # Post the message to twitter
                 try:
-                    print "Posting to twitter... ",
+                    print "Posting to twitter...",
                     api = twitter.Api(username=username, password=password)
                     try:
                         # Try to set the source (from svnTweet)
@@ -59,6 +59,7 @@ def tweet(args, username, password):
                     [:POST_LIMIT - len(PREFIX)])
                 except:
                     print "failed."
+                    raise
                 else:
                     print "success."
 
