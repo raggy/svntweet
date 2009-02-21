@@ -51,7 +51,7 @@ def tweet(args, username, password):
                     api = twitter.Api(username=username, password=password)
                     try:
                         # Try to set the source (from svnTweet)
-                        api.SetSource('svntweet')
+                        api.SetSource('svntweetgoog')
                     except NameError:
                         # Unless python.twitter < v0.6
                         pass
